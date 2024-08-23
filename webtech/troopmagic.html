@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> HEADER  </title>
+    <!-- favicon -->
+    <!-- <link rel="icon"
+        href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo"
+        type="image/gif" sizes="16x16"> -->
+    <!-- EXTERNAL LINKS -->
+    <link rel="stylesheet" href="css/header.css">
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <style>
+        #contr {
+            margin: 0px auto;
+            margin-top: 20px;
+            width: 500px;
+            height: 375px;
+            border: 1px #938e8e solid;
+        }
+
+        #videoElement {
+            width: 500px;
+            height: 375px;
+            background-color: #666;
+        }
+
+        #clock {
+          
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: lightgrey;
+            margin: auto;
+            margin-top: 15px;
+        }
+
+        span {
+            display: block;
+            width: 100%;
+            margin: auto;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+    <div id="contr">
+        <video autoplay="true" id="videoElement">
+
+        </video>
+    </div>
+    <script>
+        var video = document.querySelector("#videoElement");
+
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (err0r) {
+                    console.log("Something went wrong!");
+                });
+        }
+    </script>
+    <div id="clock">
+        <span id="seconds">12</span>
+    </div>
+    <script>
+        timeLeft = 12;
+
+        function countdown() {
+            timeLeft--;
+            document.getElementById("seconds").innerHTML = String(timeLeft);
+            if (timeLeft > 0) {
+                setTimeout(countdown, 1000);
+            }
+            else {
+
+            window.location.href = 'reco.html';}
+        };
+
+        setTimeout(countdown, 1000);
+    </script>
+
+</body>
+
+</html>

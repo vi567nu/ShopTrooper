@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> HEADER</title>
+    <!-- favicon -->
+    <!-- <link rel="icon" -->
+        <!-- href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" -->
+        <!-- type="image/gif" sizes="16x16"> -->
+    <!-- EXTERNAL LINKS -->
+    <link rel="stylesheet" href="css/header.css">
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #containerSlider {
+            margin: auto;
+            width: 90%;
+            text-align: center;
+            padding-top: 100px;
+            box-sizing: border-box;
+        }
+
+        #containerSlider img {
+            width: 50%;
+            height: 50%;
+        }
+
+        @media(max-width: 732px) {
+            #containerSlider img {
+                height: 12em;
+            }
+        }
+
+        @media(max-width: 50px) {
+            #containerSlider img {
+                height: 1em;
+            }
+        }
+        #hit
+        {
+            font-family:sans-serif;
+            margin: auto;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+    <h3 id="hit">This is YOUR FIT that HITS!</h3>
+    
+    <section>
+        <div id="containerSlider">
+            <div id="slidingImage"><a href="http://127.0.0.1:5500/contentDetails.html?1"> <img src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg" alt="image1"></a> </div>
+            <div id="slidingImage"> <img src="img/hit2.jpeg" alt="image2"> </div>
+            <div id="slidingImage"> <img src="img/hit3.png" alt="image3"> </div
+        </div>
+    </section 
+</body>
+    
+    
+
+</html>
